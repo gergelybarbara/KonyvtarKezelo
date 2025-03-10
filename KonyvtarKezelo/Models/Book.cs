@@ -12,7 +12,7 @@ namespace KonyvtarKezelo.Models
         public string Title { get; set; }
         public string Author { get; set; }
         public int Year { get; set; }
-        bool isAvailable { get; set; }
+        public bool isAvailable { get; set; }
 
         public Book(string iSBN, string title, string author, int year, bool isAvailable)
         {

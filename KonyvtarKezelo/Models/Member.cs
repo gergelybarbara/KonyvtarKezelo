@@ -12,9 +12,26 @@ namespace KonyvtarKezelo.Models
         public string Name { get; set; }
         public List<Book> BorrowedBooks { get; set; } = new List<Book>();
 
-        public void konyvKolcsonzes(Book book)
+        public void BorrowBook(Book book)
         {
-            Book.Add= book;
+            if (book.isAvailable)
+            {
+
+                book.isAvailable = false;
+                BorrowedBooks.Add(book);
+            }
+        }
+        public void ReturnBook(Book book)
+        {
+            if (BorrowedBooks.Contains(book))
+            {
+                book.isAvailable = true;
+                BorrowedBooks.Remove(book);
+                Console.WriteLine($"{book.Title} sikeresen visszaadva!");
+            }
+            else {
+                Console.WriteLine($"{book.Title} nem volt kikölcsönözve!");
+            }
         }
 
 
