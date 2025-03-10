@@ -12,7 +12,10 @@ namespace KonyvtarKezelo.Models
         public string Name { get; set; }
         public List<Book> BorrowedBooks { get; set; } = new List<Book>();
 
-
+        public void konyvKolcsonzes(Book book)
+        {
+            Book.Add= book;
+        }
 
 
     }
