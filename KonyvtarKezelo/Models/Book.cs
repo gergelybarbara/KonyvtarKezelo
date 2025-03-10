@@ -30,7 +30,7 @@ namespace KonyvtarKezelo.Models
 
         public override string? ToString()
         {
-            return base.ToString();
+            return $"A könyv azonosító száma: {ISBN}, címe: {Title}, szerzője: {Author}, kiadási éve {Year} " + (isAvailable ? "kölcsönözhető" : "nem kölcsönözhető");
         }
     }
 }
